@@ -17,7 +17,7 @@ Here, we present a new method termed DriverMP (Multiomics-based Pair driver gene
 `g++ --version`
 
 
-**D.** Unzip "Driver.tar.gz" you have downloaded;
+**D.** Unzip "DriverMP.tar.gz" you have downloaded;
 
 
 **E.** You can use our compiled `DriverMP` directly as shown below, 
