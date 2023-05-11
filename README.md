@@ -1,6 +1,6 @@
 # DriverMP
 
-In this study, we present a new method termed DriverMP (Multiomics-based Pair driver genes) for effectively prioritizing altered genes on a cancer type level by considering mutation pair genes. It is designed by first applying somatic mutation data, protein-protein interaction network, and differential gene expression data to prioritizing mutation pairs, based on which individual mutated genes are then prioritized.
+Here, we present a new method termed DriverMP (Multiomics-based Pair driver genes) for effectively prioritizing altered genes on a cancer type level by considering mutation pair genes. It is designed by first applying somatic mutation data, protein-protein interaction network, and differential gene expression data to prioritizing mutation pairs, based on which individual mutated genes are then prioritized.
 
 	
 ## Requirements for installation
@@ -17,7 +17,7 @@ In this study, we present a new method termed DriverMP (Multiomics-based Pair dr
 `g++ --version`
 
 
-**D.** Unzip "Driver.zip" you have downloaded;
+**D.** Unzip "DriverMP.tar.gz" you have downloaded;
 
 
 **E.** You can use our compiled `DriverMP` directly as shown below, 
