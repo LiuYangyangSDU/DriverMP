@@ -4,7 +4,7 @@ Here, we present a new method termed DriverMP (Multiomics-based Pair driver gene
 
 The workflow of DriverMP is as follows.
 
-![Workflow of DriverMP](./images/Workflow.tif)
+![Workflow of DriverMP](./images/Workflow.png)
 
 	
 ## Requirements for installation
