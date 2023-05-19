@@ -21,7 +21,7 @@ The workflow of DriverMP is as follows.
 `g++ --version`
 
 
-**D.** Unzip "DriverMP.tar.gz" you have downloaded;
+**D.** Unzip "DriverMP.zip" you have downloaded;
 
 
 **E.** You can use our compiled `DriverMP` directly as shown below, 
