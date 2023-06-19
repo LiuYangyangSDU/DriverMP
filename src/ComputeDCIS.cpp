@@ -295,7 +295,8 @@ vector<vector<int>> Driver::GetRequiredPairGenes(vector<string> majorGenes) {
 }
 
 
-map<vector<int>, double> Driver::ComputeDCIS(vector<string> majorGenes) {
+map<vector<int>, double> Driver::ComputeDCIS(vector<string> majorGenes, int threadNum) {
+    omp_set_num_threads(threadNum);
     cout << "===================================== STEP 4: Compute paired DCISs ====================================" << endl;
     cout << "====                                                                                               ====" << endl;
     // calculating the mutation score and network of pair genes

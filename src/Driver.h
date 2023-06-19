@@ -46,7 +46,7 @@ public:
 //    void ReadGeneExp(string expPath);//读取基因表达差异的平均值
 //    bool ReadGeneExpNetWork(string netPath);//读取由WCGNA方法算出来的，基因差异表达网络
     void PairGeneMutation();//计算成对基因的突变分数乘积
-    map<vector<int>, double> ComputeDCIS(vector<string> majorGenes);//计算成对基因的pairMIF值
+    map<vector<int>, double> ComputeDCIS(vector<string> majorGenes, int threadNum);//计算成对基因的pairMIF值
     void ComputePairMIF1();
     //SingleMIF.cpp
     void InitialMaxMIF();//计算用MaxMIF算法计算每个基因的MaxMIF值
