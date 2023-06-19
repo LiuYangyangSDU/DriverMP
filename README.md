@@ -52,13 +52,17 @@ Then, you can use DriverMP as normal.
 
 *[Thread Number]: Number of cores for multithreading;*
 
-Note: 
+**Note**: 
 
 (i) You can view the requirements for the input parameters by entering the following code in the terminal:
 
-`./DriverMP -help`
+`./DriverMP -help` or `./DriverMP -h`
 
-(ii) If you do not enter a thread parameter, then the default is 1;
+(ii) You can check the current version of DriverMP by entering the following code in the terminal:
+
+`./DriverMP -version` or `./DriverMP -v`
+
+(iii) If you do not enter a thread parameter, then the default is 1;
 
 
 **B.** You can try the default example we have provided as follows.
