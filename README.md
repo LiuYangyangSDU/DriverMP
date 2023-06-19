@@ -21,7 +21,7 @@ The workflow of DriverMP is as follows.
 `g++ --version`
 
 
-**D.** Unzip "DriverMP.tar.gz" you have downloaded;
+**D.** Unzip "DriverMP.zip" you have downloaded;
 
 
 **E.** You can use our compiled `DriverMP` directly as shown below, 
@@ -78,7 +78,7 @@ The output results are saved to the `Output//output.txt` file by default.
 
 **A.** Mutation Data
 
-(i) Note that only genes with `Official Symbol` can be recognised;
+(i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
 (ii) The first row is the sample ID, and the first element of each row starting from the second row is the gene of form Official Symbol.
 
@@ -97,7 +97,7 @@ The format requirement is as follows:
 
 **B.** Gene Expression RNA-Seq Data
 
-(i) Note that only genes with `Official Symbol` can be recognised;
+(i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
 (ii) The first row is the sample ID, and the first element of each row starting from the second row is the gene of form Official Symbol;
 
