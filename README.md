@@ -27,7 +27,7 @@ The workflow of DriverMP is as follows.
 **E.** You can use our compiled `DriverMP` directly as shown below, 
 
 
-or you can compile it yourself using the code we provide as follows：
+or you can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
 
 
 `g++ -Ofast -fopenmp *.cpp -o DriverMP`
@@ -39,7 +39,7 @@ Then, you can use DriverMP as normal.
 		
 **A.** You can run DriverMP as follow.
 
-`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network data]`
+`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network data] [Thread Number]`
 
 
 *[Mutation data]: Path to format-compliant non-silent somatic mutation data;*
@@ -50,26 +50,25 @@ Then, you can use DriverMP as normal.
 
 *[PPI network data]: Path to Protein-Protein Interaction Networks;*
 
+*[Thread Number]: Number of cores for multithreading;*
+
+Note: 
+
+(i) You can view the requirements for the input parameters by entering the following code in the terminal:
+
+`./DriverMP -help`
+
+(ii) If you do not enter a thread parameter, then the default is 1;
+
 
 **B.** You can try the default example we have provided as follows.
 
-`./DriverMP`
+`./DriverMP DriverMP_example//Mutation_data.txt DriverMP_example//Gene_expresstion_tumor.txt DriverMP_example//Gene_expression_normal.txt DriverMP_example//HumanNet`
 
 *This example will run directly on the breast cancer data and HumanNet interaction network data we provided.*
-
-				
-**C.** You can provide only cancer-specific data and use our default PPI network.
-				
-`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] H`
-
-or
-
-`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] S`
-
-*H and S represent the HumanNet and STRINGv10 networks that we provide for you by default, respectively.*
 		
 
-**D.** Output
+**C.** Output
 
 The output results are saved to the `Output//output.txt` file by default.
 	
