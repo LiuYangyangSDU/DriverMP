@@ -24,15 +24,17 @@ The workflow of DriverMP is as follows.
 **D.** Unzip "DriverMP.zip" you have downloaded;
 
 
-**E.** You can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
+**E.** You can compile the code we provide as follows (The prerequisite is that you have the openMP installed)：
 
 
 `g++ -Ofast -fopenmp src/*.cpp -o DriverMP`
 
 
-Then, you can use DriverMP as normal. If you cannot execute it, you can try to change the permissions of the file:
+Then, you can be freely to use DriverMP. If you cannot execute it, you can try to change the permissions of the file:
+
 
 `chmod +x DriverMP`
+
 
 ## Usage of DriverMP
 		
@@ -62,14 +64,18 @@ A example of DriverMP  might be:
 
     ./DriverMP -m DriverMP_example/Mutation_data.txt -u DriverMP_example/Gene_expresstion_tumor.txt -n DriverMP_example/Gene_expression_normal.txt -p DriverMP_example/HumanNet
     
-    or
+or
     
     ./DriverMP --mut DriverMP_example/Mutation_data.txt --tumor_exp DriverMP_example/Gene_expresstion_tumor.txt --normal_exp DriverMP_example/Gene_expression_normal.txt --ppi DriverMP_example/HumanNet
 
 **Output**
 
 The result is saved in Output/output.txt.
-	
+
+**Changelog**
+
+The current version of DriverMP is 1.0, subsequnt version will be updated.
+ 
 ## Data Format Requirements
 
 
@@ -81,15 +87,15 @@ The result is saved in Output/output.txt.
 
 The format requirement is as follows:
 
-    **[sample 1]** tab **[sample 2]** tab … tab **[sample M]**
+    [sample 1] tab [sample 2] tab [sample 3] tab … tab [sample M]
 
-    **[  Gene  A ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    [ Gene  A] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
-    **[  Gene  B ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    [ Gene  B] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
     ...
 	    
-    **[  Gene  C ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    [ Gene  C] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
 
 **B.** Gene Expression Data
@@ -98,37 +104,37 @@ The format requirement is as follows:
 
 (ii) The first row is the sample ID, and the first element of each row starting from the second row is the gene of form Official Symbol;
 
-(iii) We use gene expression data downloaded in FPKM format in TCGA, and we recommend that you use this format as well;
+(iii) We use gene expression data downloaded in FPKM format in TCGA database, and we recommend that you use this format as well;
 
-(iv) You need to provide both `Tumor and normal` gene expression data, please make sure they both conform to the format.
+(iv) You need to provide both `Tumor and normal` gene expression data, please make sure they both conform to the reformat.
 
 The format requirement is as follows:
 
-**[sample 1]** tab **[sample 2]** tab … tab **[sample M]**
+    [sample 1] tab [sample 2] tab [sample 3] tab … tab [sample M]
 
-**[  Gene  A ]** tab [ value ] tab [ value ] tab … tab [ value ]
+    [ Gene  A] tab [  value ] tab [  value ] tab … tab [  value ]
 
-**[  Gene  B ]** tab [ value ] tab [ value ] tab … tab [ value ]
+    [ Gene  B] tab [  value ] tab [  value ] tab … tab [  value ]
 
-...
+    ...
 	    
-**[  Gene  C ]** tab [ value ] tab [ value ] tab … tab [ value ]
+    [ Gene  C] tab [  value ] tab [  value ] tab … tab [  value ]
 
 
 **C.** Protein-Protein Interaction Network
 
-(i) At present, the node naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
+(i) At present, the node (or gene/protein) naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
 
-(ii) For the best performance of DriverMP, you should preferably provide PPI networks with weights that are maximum-minimum normalized as follows: 
+(ii) For the best performance of DriverMP, you should preferably provide a PPI network with weights that are maximum-minimum normalized as follows: 
 
 $$
-x^{'} = \frac{x - \min x}{\max x - \min x}
+x^{'} = \frac{x - \min {x}}{\max {x} - \min {x}}
 $$
 		
-The data format requirements are as follows: 
+The data format requirement is as follows: 
 			
-**[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and Gene B]
+    [Gene NCBI A] tab [Gene NCBI ID B] tab [the weight between Gene A and Gene B]
 
-...
+    ...
 
-**[Gene NCBI C]** tab **[Gene NCBI D]** tab [the weight between Gene C and Gene D]
+    [Gene NCBI C] tab [Gene NCBI ID D] tab [the weight between Gene C and Gene D]
