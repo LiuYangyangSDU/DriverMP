@@ -24,13 +24,10 @@ The workflow of DriverMP is as follows.
 **D.** Unzip "DriverMP.zip" you have downloaded;
 
 
-**E.** You can use our compiled `DriverMP` directly as shown below, 
+**E.** You can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
 
 
-or you can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
-
-
-`g++ -Ofast -fopenmp *.cpp -o DriverMP`
+`g++ -Ofast -fopenmp src/*.cpp -o DriverMP`
 
 
 Then, you can use DriverMP as normal.
@@ -43,11 +40,11 @@ Then, you can use DriverMP as normal.
 
     --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
 
-    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
+    --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
 
-    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
+    --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
-    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
+    --ppi/-p <string>            : Path to a Protein-Protein Interaction Network.
 
 
 **Optional**
@@ -86,15 +83,15 @@ The format requirement is as follows:
 **[  Gene  C ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
 
-**B.** Gene Expression RNA-Seq Data
+**B.** Gene Expression Data
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
 (ii) The first row is the sample ID, and the first element of each row starting from the second row is the gene of form Official Symbol;
 
-(iii) We use RNA-Seq data downloaded in FPKM format in TCGA, and we recommend that you use this format as well;
+(iii) We use gene expression data downloaded in FPKM format in TCGA, and we recommend that you use this format as well;
 
-(iv) You need to provide both `Tumor and normal` RNA-Seq data, please make sure they both conform to the format.
+(iv) You need to provide both `Tumor and normal` gene expression data, please make sure they both conform to the format.
 
 The format requirement is as follows:
 
@@ -111,11 +108,9 @@ The format requirement is as follows:
 
 **C.** Protein-Protein Interaction Network
 
-(i) DriverMP provides two default PPI networks HumanNet and STRINGv10, if you need to use other PPI networks please provide formatted data.
+(i) At present, the node naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
 
-(ii) At present, the node naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
-
-(iii) For the best performance of DriverMP, you should preferably provide PPI networks with weights that are maximum-minimum normalized as follows: 
+(ii) For the best performance of DriverMP, you should preferably provide PPI networks with weights that are maximum-minimum normalized as follows: 
 
 $$
 x^{'} = \frac{x - \min x}{\max x - \min x}
@@ -123,8 +118,8 @@ $$
 		
 The data format requirements are as follow: 
 			
-**[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and B]
+**[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and Gene B]
 
 ...
 
-**[Gene NCBI C]** tab **[Gene NCBI D]** tab [the weight between Gene C and D]
+**[Gene NCBI C]** tab **[Gene NCBI D]** tab [the weight between Gene C and Gene D]
