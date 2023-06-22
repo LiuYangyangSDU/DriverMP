@@ -39,7 +39,7 @@ Then, you can use DriverMP as normal.
 		
   DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
-** Required **
+**Required**
 
   --ref_gtf/-r <string>        : Combined transcriptome assembled by different tools in GTF format (just combine the different assemblies into a GTF file, combine.gtf);
 
@@ -50,7 +50,7 @@ Then, you can use DriverMP as normal.
   --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
 
 
-** Optional **
+**Optional**
 
   --threads/-t <int>           : Number of threads to launch, default: 1;
 
@@ -58,11 +58,11 @@ Then, you can use DriverMP as normal.
 
   --help/-h                    : help infomation;
 
-** Typical commands **
+**Typical commands**
 
-A typical TransBorrow command for paired-end data might be:
+A example of DriverMP  might be:
 
-  TransBorrow -r combine.gtf -g genome.fa -b file.bam -s first
+  `./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet`
 	
 ## Data Format Requirements
 
