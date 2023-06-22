@@ -35,46 +35,61 @@ or you can compile it yourself using the code we provide as follows (The prerequ
 
 Then, you can use DriverMP as normal.
 
-## Running DriverMP
+## Usage of DriverMP
 		
-**A.** You can run DriverMP as follow.
+  TransBorrow [options] -r <combined_assemblies> -g <reference_genome> -b <bam_file> -s <strand_info>
 
-`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network data] [Thread Number]`
+** Required **
 
+  --ref_gtf/-r <string>        : Combined transcriptome assembled by different tools in GTF format (just combine the different assemblies into a GTF file, combine.gtf);
 
-*[Mutation data]: Path to format-compliant non-silent somatic mutation data;*
+  --ref_genome/-g <string>     : Reference genome in FASTA format;
 
-*[Tumor expression data]: Path to RNA-Seq data (FPKM normalized) for specific cancer samples;*
+  --bam/-b <string>            : BAM file;
 
-*[Normal expression data]: Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;*
+  --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
 
-*[PPI network data]: Path to Protein-Protein Interaction Networks;*
+                                     If reads are paired:
 
-*[Thread Number]: Number of cores for multithreading;*
+                                       1) Use <unstranded> to indicate RNA-seq reads are non-strand-specific;
 
-**Note**: 
+                                       2) Use <first> to indicate fr-first-stranded RNA-seq reads;
 
-(i) You can view the requirements for the input parameters by entering the following code in the terminal:
+                                       3) Use <second> to indicate fr-second-stranded RNA-seq reads;
 
-`./DriverMP -help` or `./DriverMP -h`
+                                     If reads are single:
 
-(ii) You can check the current version of DriverMP by entering the following code in the terminal:
+                                       1) Use <single_unstranded> to indicate RNA-seq reads are non-strand-specific;
 
-`./DriverMP -version` or `./DriverMP -v`
+                                       2) Use <single_forward> to indicate RNA-seq reads forward;
 
-(iii) If you do not enter a thread parameter, then the default is 1;
+                                       3) Use <single_reverse> to indicate NA-seq reads reverse;
 
+** Optional **
 
-**B.** You can try the default example we have provided as follows.
+  --min_cov/-c <float>         : Min coverage of recovered transcripts, default: 1;
 
-`./DriverMP DriverMP_example//Mutation_data.txt DriverMP_example//Gene_expresstion_tumor.txt DriverMP_example//Gene_expression_normal.txt DriverMP_example//HumanNet`
+  --output/-o <string>         : Output path, default: ./TransBorrow_results/TransBorrow.gtf;
 
-*This example will run directly on the breast cancer data and HumanNet interaction network data we provided.*
-		
+  --min_trans_len/-l <int>     : Min length of recovered transcripts, default: 200;
 
-**C.** Output
+  --cre_num/-n <int>           : Credible sub_paths assembled by at least this number of tools, default: 2;
 
-The output results are saved to the `Output//output.txt` file by default.
+  --min_seed/-d <float>        : Min seed coverage for extension, default: 0;
+
+  --temp_dir/-T <string>       : Directory storing temporary files, default: ./TransBorrow_tmp;
+
+  --threads/-t <int>           : Number of threads to launch, default: 1;
+
+  --version/-v                 : Show current version of TransBorrow;
+
+  --help/-h                    : help infomation;
+
+** Typical commands **
+
+A typical TransBorrow command for paired-end data might be:
+
+  TransBorrow -r combine.gtf -g genome.fa -b file.bam -s first
 	
 ## Data Format Requirements
 
