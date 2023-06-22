@@ -52,8 +52,6 @@ Then, you can use DriverMP as normal.
     --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
     --ppi/-p <string>            : Path to a Protein-Protein Interaction Network.
->>>>>>> 7ac4843c7d7ac429b72dc9dcc982c94b3a890e01
-
 
 **Optional**
 
