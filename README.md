@@ -68,6 +68,10 @@ Then, you can use DriverMP as normal.
 A example of DriverMP  might be:
 
     ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
+
+**Output**
+
+The result is saved in Output/output.txt.
 	
 ## Data Format Requirements
 
