@@ -36,9 +36,11 @@ Then, you can use DriverMP as normal. If you cannot execute it, you can try to c
 
 ## Usage of DriverMP
 		
-    ./DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
+    ./DriverMP [options] -m <mutation_file> -u <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 **Required**
+
+    --mut/-m <string>            : Path to non-silent somatic mutation data;
 
     --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
 
@@ -58,7 +60,11 @@ Then, you can use DriverMP as normal. If you cannot execute it, you can try to c
 
 A example of DriverMP  might be:
 
-    ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
+    ./DriverMP -m DriverMP_example/Mutation_data.txt -u DriverMP_example/Gene_expresstion_tumor.txt -n DriverMP_example/Gene_expression_normal.txt -p DriverMP_example/HumanNet
+    
+    or
+    
+    ./DriverMP --mut DriverMP_example/Mutation_data.txt --tumor_exp DriverMP_example/Gene_expresstion_tumor.txt --normal_exp DriverMP_example/Gene_expression_normal.txt --ppi DriverMP_example/HumanNet
 
 **Output**
 
@@ -75,15 +81,15 @@ The result is saved in Output/output.txt.
 
 The format requirement is as follows:
 
-**[sample 1]** tab **[sample 2]** tab … tab **[sample M]**
+    **[sample 1]** tab **[sample 2]** tab … tab **[sample M]**
 
-**[  Gene  A ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    **[  Gene  A ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
-**[  Gene  B ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    **[  Gene  B ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
-...
+    ...
 	    
-**[  Gene  C ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
+    **[  Gene  C ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
 
 **B.** Gene Expression Data
