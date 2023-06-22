@@ -37,7 +37,7 @@ Then, you can use DriverMP as normal.
 
 ## Usage of DriverMP
 		
-  TransBorrow [options] -r <combined_assemblies> -g <reference_genome> -b <bam_file> -s <strand_info>
+  DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 ** Required **
 
@@ -49,35 +49,8 @@ Then, you can use DriverMP as normal.
 
   --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
 
-                                     If reads are paired:
-
-                                       1) Use <unstranded> to indicate RNA-seq reads are non-strand-specific;
-
-                                       2) Use <first> to indicate fr-first-stranded RNA-seq reads;
-
-                                       3) Use <second> to indicate fr-second-stranded RNA-seq reads;
-
-                                     If reads are single:
-
-                                       1) Use <single_unstranded> to indicate RNA-seq reads are non-strand-specific;
-
-                                       2) Use <single_forward> to indicate RNA-seq reads forward;
-
-                                       3) Use <single_reverse> to indicate NA-seq reads reverse;
 
 ** Optional **
-
-  --min_cov/-c <float>         : Min coverage of recovered transcripts, default: 1;
-
-  --output/-o <string>         : Output path, default: ./TransBorrow_results/TransBorrow.gtf;
-
-  --min_trans_len/-l <int>     : Min length of recovered transcripts, default: 200;
-
-  --cre_num/-n <int>           : Credible sub_paths assembled by at least this number of tools, default: 2;
-
-  --min_seed/-d <float>        : Min seed coverage for extension, default: 0;
-
-  --temp_dir/-T <string>       : Directory storing temporary files, default: ./TransBorrow_tmp;
 
   --threads/-t <int>           : Number of threads to launch, default: 1;
 
