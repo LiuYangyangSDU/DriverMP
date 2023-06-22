@@ -41,20 +41,20 @@ Then, you can use DriverMP as normal.
 
 **Required**
 
-    --ref_gtf/-r <string>        : Combined transcriptome assembled by different tools in GTF format (just combine the different assemblies into a GTF file, combine.gtf);
+    --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
 
-    --ref_genome/-g <string>     : Reference genome in FASTA format;
+    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
 
-    --bam/-b <string>            : BAM file;
+    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
-    --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
+    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
 
 
 **Optional**
 
     --threads/-t <int>           : Number of threads to launch, default: 1;
 
-    --version/-v                 : Show current version of TransBorrow;
+    --version/-v                 : Show current version of DriverMP;
 
     --help/-h                    : help infomation;
 
