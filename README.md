@@ -30,11 +30,13 @@ The workflow of DriverMP is as follows.
 `g++ -Ofast -fopenmp src/*.cpp -o DriverMP`
 
 
-Then, you can use DriverMP as normal.
+Then, you can use DriverMP as normal. If you cannot execute it, you can try to change the permissions of the file:
+
+`chmod +x DriverMP`
 
 ## Usage of DriverMP
 		
-    DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
+    ./DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 **Required**
 
@@ -117,7 +119,7 @@ $$
 x^{'} = \frac{x - \min x}{\max x - \min x}
 $$
 		
-The data format requirements are as follow: 
+The data format requirements are as follows: 
 			
 **[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and Gene B]
 
