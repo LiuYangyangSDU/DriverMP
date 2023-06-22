@@ -6,35 +6,25 @@ The workflow of DriverMP is as follows.
 
 ![Workflow of DriverMP](./images/Workflow.png)
 
-	
 ## Requirements for installation
 
 **A.** `Linux/Unix` environment
 
-
 **B.** `C++` is one of the program languages, which is available for most operating systems. If you are in UNIX/Linux, it is probably already installed;
-
 
 **C.** We tested the code on `Ubuntu 18.04.6 LTS`, using `g++ version 7.5.0`, and we recommend that you use DriverMP on that version or above. If you want to check your current version of g++, you can use the following command in your terminal:
 
-
 `g++ --version`
-
 
 **D.** Unzip "DriverMP.zip" you have downloaded;
 
-
 **E.** You can compile the code we provide as follows (The prerequisite is that you have the openMP installed)：
-
 
 `g++ -Ofast -fopenmp src/*.cpp -o DriverMP`
 
-
 Then, you can be freely to use DriverMP. If you cannot execute it, you can try to change the permissions of the file:
 
-
 `chmod +x DriverMP`
-
 
 ## Usage of DriverMP
 		
@@ -78,7 +68,6 @@ The current version of DriverMP is 1.0, subsequnt version will be updated.
  
 ## Data Format Requirements
 
-
 **A.** Mutation Data
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
@@ -96,7 +85,6 @@ The format requirement is as follows:
     ...
 	    
     [ Gene  C] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
-
 
 **B.** Gene Expression Data
 
@@ -119,7 +107,6 @@ The format requirement is as follows:
     ...
 	    
     [ Gene  C] tab [  value ] tab [  value ] tab … tab [  value ]
-
 
 **C.** Protein-Protein Interaction Network
 
