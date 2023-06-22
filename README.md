@@ -52,17 +52,17 @@ Then, you can use DriverMP as normal.
 
 **Optional**
 
-  --threads/-t <int>           : Number of threads to launch, default: 1;
+    --threads/-t <int>           : Number of threads to launch, default: 1;
 
-  --version/-v                 : Show current version of TransBorrow;
+    --version/-v                 : Show current version of TransBorrow;
 
-  --help/-h                    : help infomation;
+    --help/-h                    : help infomation;
 
 **Typical commands**
 
 A example of DriverMP  might be:
 
-  `./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet`
+    ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
 	
 ## Data Format Requirements
 
