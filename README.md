@@ -35,46 +35,34 @@ or you can compile it yourself using the code we provide as follows (The prerequ
 
 Then, you can use DriverMP as normal.
 
-## Running DriverMP
+## Usage of DriverMP
 		
-**A.** You can run DriverMP as follow.
+    DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
-`./DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network data] [Thread Number]`
+**Required**
 
+    --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
 
-*[Mutation data]: Path to format-compliant non-silent somatic mutation data;*
+    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
 
-*[Tumor expression data]: Path to RNA-Seq data (FPKM normalized) for specific cancer samples;*
+    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
-*[Normal expression data]: Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;*
-
-*[PPI network data]: Path to Protein-Protein Interaction Networks;*
-
-*[Thread Number]: Number of cores for multithreading;*
-
-**Note**: 
-
-(i) You can view the requirements for the input parameters by entering the following code in the terminal:
-
-`./DriverMP -help` or `./DriverMP -h`
-
-(ii) You can check the current version of DriverMP by entering the following code in the terminal:
-
-`./DriverMP -version` or `./DriverMP -v`
-
-(iii) If you do not enter a thread parameter, then the default is 1;
+    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
 
 
-**B.** You can try the default example we have provided as follows.
+**Optional**
 
-`./DriverMP DriverMP_example//Mutation_data.txt DriverMP_example//Gene_expresstion_tumor.txt DriverMP_example//Gene_expression_normal.txt DriverMP_example//HumanNet`
+    --threads/-t <int>           : Number of threads to launch, default: 1;
 
-*This example will run directly on the breast cancer data and HumanNet interaction network data we provided.*
-		
+    --version/-v                 : Show current version of DriverMP;
 
-**C.** Output
+    --help/-h                    : help infomation;
 
-The output results are saved to the `Output//output.txt` file by default.
+**Typical commands**
+
+A example of DriverMP  might be:
+
+    ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
 	
 ## Data Format Requirements
 
