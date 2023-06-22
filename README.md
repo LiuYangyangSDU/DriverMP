@@ -37,17 +37,17 @@ Then, you can use DriverMP as normal.
 
 ## Usage of DriverMP
 		
-  DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
+    DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 **Required**
 
-  --ref_gtf/-r <string>        : Combined transcriptome assembled by different tools in GTF format (just combine the different assemblies into a GTF file, combine.gtf);
+    --ref_gtf/-r <string>        : Combined transcriptome assembled by different tools in GTF format (just combine the different assemblies into a GTF file, combine.gtf);
 
-  --ref_genome/-g <string>     : Reference genome in FASTA format;
+    --ref_genome/-g <string>     : Reference genome in FASTA format;
 
-  --bam/-b <string>            : BAM file;
+    --bam/-b <string>            : BAM file;
 
-  --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
+    --strand/-s <string>         : Strand-specific RNA-Seq reads orientation.
 
 
 **Optional**
