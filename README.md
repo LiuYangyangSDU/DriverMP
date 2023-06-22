@@ -38,22 +38,11 @@ Then, you can use DriverMP as normal.
 
 **Required**
 
-    --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
-
-<<<<<<< HEAD
-    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
-
-    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
-
-    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
-=======
     --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
 
     --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
     --ppi/-p <string>            : Path to a Protein-Protein Interaction Network.
->>>>>>> 7ac4843c7d7ac429b72dc9dcc982c94b3a890e01
-
 
 **Optional**
 
@@ -68,6 +57,10 @@ Then, you can use DriverMP as normal.
 A example of DriverMP  might be:
 
     ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
+
+**Output**
+
+The result is saved in Output/output.txt.
 	
 ## Data Format Requirements
 
