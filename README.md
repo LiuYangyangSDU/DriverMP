@@ -38,15 +38,6 @@ Then, you can use DriverMP as normal.
 
 **Required**
 
-    --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
-
-<<<<<<< HEAD
-    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
-
-    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
-
-    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
-=======
     --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
 
     --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
