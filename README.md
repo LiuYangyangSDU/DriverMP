@@ -38,7 +38,7 @@ The compiled DriverMP file is in the current folder.
 
 ## Usage of DriverMP
 		
-    DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
+    DriverMP [options] -m <mutation_file> -u <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 **Required**
 
