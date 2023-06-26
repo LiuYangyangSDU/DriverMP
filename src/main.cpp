@@ -165,45 +165,6 @@ int main(int argc, char* argv[]) {
     string netPath;
     string savePath = string(output) + "//output.txt";
 
-//    if (argc == 5) {
-//        mutationPath = argv[1];
-//        expTumorPath = argv[2];
-//        expNormalPath = argv[3];
-//        netPath = argv[4];
-//    }
-//    else if (argc == 6){
-//        mutationPath = argv[1];
-//        expTumorPath = argv[2];
-//        expNormalPath = argv[3];
-//        netPath = argv[4];
-//        threadNum = stoi(argv[5]);
-//    }
-//    else if (argc == 2) {
-//        string arg = argv[1];
-//        if (arg == "-help" || arg == "-h") {
-//            std::cout << "Usage：" << std::endl;
-//            std::cout << "DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network] [Thread Number]" << std::endl;
-//            std::cout << "[Mutation data]: Path to format-compliant non-silent somatic mutation data;" << std::endl;
-//            std::cout << "[Tumor expression data]: Path to RNA-Seq data (FPKM normalized) for specific cancer samples;" << std::endl;
-//            std::cout << "[Normal expression data]: Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;" << std::endl;
-//            std::cout << "[PPI network data]: Path to Protein-Protein Interaction Networks;" << std::endl;
-//            std::cout << "[Thread Number]: Number of cores for multithreading, the default is 1;" << std::endl;
-//            std::cout << "-v, -version Show program version number" << std::endl;
-//            // 添加更多的帮助信息
-//            return 0;
-//        } else if (arg == "-v" || arg == "-version") {
-//            std::cout << "Version of DriverMP：1.0" << std::endl;
-//            return 0;
-//        } else {
-//            cout << "Wrong number of parameters, please try again." << endl;
-//            return 1;
-//        }
-//    }
-//    else {
-//        cout << "Wrong number of parameters, please try again." << endl;
-//        return 1;
-//    }
-
     // Preprocessing the original genes;
     Driver D;
     D.mapGeneID(geneIDPath);
