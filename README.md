@@ -24,27 +24,31 @@ The workflow of DriverMP is as follows.
 **D.** Unzip "DriverMP.zip" you have downloaded;
 
 
-**E.** You can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
+**E.** You can use our compiled `DriverMP` directly as shown below, 
 
 
-`g++ -Ofast -fopenmp src/*.cpp -o DriverMP`
+or you can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
 
 
-Then, you can use DriverMP as normal. If you cannot execute it, you can try to change the permissions of the file:
+`g++ -Ofast -fopenmp *.cpp -o DriverMP`
 
-`chmod +x DriverMP`
+
+Then, you can use DriverMP as normal.
 
 ## Usage of DriverMP
 		
-    ./DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
+    DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
 
 **Required**
 
-    --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
+    --mut/-m <string>            : Path to format-compliant non-silent somatic mutation data;
 
-    --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
+    --tumor_exp/-u <string>      : Path to RNA-Seq data (FPKM normalized) for specific cancer samples;
 
-    --ppi/-p <string>            : Path to a Protein-Protein Interaction Network.
+    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
+
+    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
+
 
 **Optional**
 
@@ -59,10 +63,6 @@ Then, you can use DriverMP as normal. If you cannot execute it, you can try to c
 A example of DriverMP  might be:
 
     ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet
-
-**Output**
-
-The result is saved in Output/output.txt.
 	
 ## Data Format Requirements
 
@@ -86,15 +86,15 @@ The format requirement is as follows:
 **[  Gene  C ]** tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
 
-**B.** Gene Expression Data
+**B.** Gene Expression RNA-Seq Data
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
 (ii) The first row is the sample ID, and the first element of each row starting from the second row is the gene of form Official Symbol;
 
-(iii) We use gene expression data downloaded in FPKM format in TCGA, and we recommend that you use this format as well;
+(iii) We use RNA-Seq data downloaded in FPKM format in TCGA, and we recommend that you use this format as well;
 
-(iv) You need to provide both `Tumor and normal` gene expression data, please make sure they both conform to the format.
+(iv) You need to provide both `Tumor and normal` RNA-Seq data, please make sure they both conform to the format.
 
 The format requirement is as follows:
 
@@ -111,18 +111,20 @@ The format requirement is as follows:
 
 **C.** Protein-Protein Interaction Network
 
-(i) At present, the node naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
+(i) DriverMP provides two default PPI networks HumanNet and STRINGv10, if you need to use other PPI networks please provide formatted data.
 
-(ii) For the best performance of DriverMP, you should preferably provide PPI networks with weights that are maximum-minimum normalized as follows: 
+(ii) At present, the node naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
+
+(iii) For the best performance of DriverMP, you should preferably provide PPI networks with weights that are maximum-minimum normalized as follows: 
 
 $$
 x^{'} = \frac{x - \min x}{\max x - \min x}
 $$
 		
-The data format requirements are as follows: 
+The data format requirements are as follow: 
 			
-**[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and Gene B]
+**[Gene NCBI A]** tab **[Gene NCBI ID B]** tab [the weight between Gene A and B]
 
 ...
 
-**[Gene NCBI C]** tab **[Gene NCBI D]** tab [the weight between Gene C and Gene D]
+**[Gene NCBI C]** tab **[Gene NCBI D]** tab [the weight between Gene C and D]

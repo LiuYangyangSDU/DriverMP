@@ -8,6 +8,8 @@
 #include <sstream>
 #include <cstring>
 #include <getopt.h>
+#include <unistd.h>
+#include <sys/stat.h>
 #define STR_SEPTABLE "\t"
 using namespace std;
 
@@ -17,9 +19,10 @@ const char * normal_exp = "";
 const char * ppi = "";
 bool Help = false;
 bool Version=false;
-const char * threads="1";
+const char * output = "DriverMP_results";
+const char * threads = "1";
 //const char * version="The current version is: v.1.0";
-const char * short_opt="m:u:n:p:ht:v";
+const char * short_opt = "m:u:n:p:ho:t:v";
 int threadNum = 1;
 
 struct option long_opt[]={
@@ -28,6 +31,7 @@ struct option long_opt[]={
         {"normal_exp",1,0,'n'},
         {"ppi",1,0,'p'},
         {"help",0,0,'h'},
+        {"output",1,0,'o'},
         {"threads",1,0,'t'},
         {"version",0,0,'v'},
         {0,0,0,0}
@@ -45,12 +49,13 @@ string  usage(){
             <<"  --normal_exp/-n <string>     "<<": Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;"<<"\n"<<endl
             <<"  --ppi/-p <string>            "<<": Path to Protein-Protein Interaction Networks."<<"\n"<<endl
             <<"** Optional **"<<"\n"<<endl
+            <<"  --output/-o <string>         "<<": Output path, default: ./DriverMP_results/output.txt;"<<"\n"<<endl
             <<"  --threads/-t <int>           "<<": Number of threads to launch, default: 1;"<<"\n"<<endl
             <<"  --version/-v                 "<<": Show current version of DriverMP;"<<"\n"<<endl
             <<"  --help/-h                    "<<": help infomation;"<<"\n"<<endl
             <<"** Typical commands **"<<"\n"<<endl
             <<"A example of DriverMP  might be:"<<"\n"<<endl
-            <<"  ./DriverMP -m DriverMP_example//Mutation_data.txt -u DriverMP_example//Gene_expresstion_tumor.txt -n DriverMP_example//Gene_expression_normal.txt -p DriverMP_example//HumanNet"<<"\n"<<endl;
+            <<"  ./DriverMP DriverMP_example//Mutation_data.txt DriverMP_example//Gene_expresstion_tumor.txt DriverMP_example//Gene_expression_normal.txt DriverMP_example//HumanNet"<<"\n"<<endl;
     use_info<<"================================================================"<<endl;
     return use_info.str();
 }
@@ -86,6 +91,9 @@ int parse_options(int argc,char*argv[]){
             case 'v':
             Version=true;
             break;
+                case 'o':
+                    output=optarg;
+                    break;
                 case 't':
                     threads=optarg;
                     break;
@@ -135,13 +143,66 @@ int parse_options(int argc,char*argv[]){
 
 int main(int argc, char* argv[]) {
     parse_options(argc,argv);
+    // 检查是否存在DriverMP_results文件夹，如果存在则删除该目录及其内容。
+    char RM[100000];
+    if( (access( output, 0 )) != -1 )
+    {
+        cout<<"[WARNING] : "<<output<<" exists already. It will be overwritten."<<endl;
+        FILE * stream;
+        strcpy(RM,"rm -r ");
+        strcat(RM,output);
+        stream = popen(RM,"r");
+        pclose(stream);
+        if (mkdir(output, 0777) != 0) std::cerr << "Failed to create folder." << std::endl;
+    } else {
+        if (mkdir(output, 0777) != 0) std::cerr << "Failed to create folder." << std::endl;
+    }
     string geneIDPath = "DriverMP_example//geneID.txt";
     string referencePath = "DriverMP_example//CGC.txt";
     string mutationPath;
     string expTumorPath;
     string expNormalPath;
     string netPath;
-    string savePath = "Output//output.txt";
+    string savePath = string(output) + "//output.txt";
+
+//    if (argc == 5) {
+//        mutationPath = argv[1];
+//        expTumorPath = argv[2];
+//        expNormalPath = argv[3];
+//        netPath = argv[4];
+//    }
+//    else if (argc == 6){
+//        mutationPath = argv[1];
+//        expTumorPath = argv[2];
+//        expNormalPath = argv[3];
+//        netPath = argv[4];
+//        threadNum = stoi(argv[5]);
+//    }
+//    else if (argc == 2) {
+//        string arg = argv[1];
+//        if (arg == "-help" || arg == "-h") {
+//            std::cout << "Usage：" << std::endl;
+//            std::cout << "DriverMP [Mutation data] [Tumor expression data] [Normal expression data] [PPI network] [Thread Number]" << std::endl;
+//            std::cout << "[Mutation data]: Path to format-compliant non-silent somatic mutation data;" << std::endl;
+//            std::cout << "[Tumor expression data]: Path to RNA-Seq data (FPKM normalized) for specific cancer samples;" << std::endl;
+//            std::cout << "[Normal expression data]: Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;" << std::endl;
+//            std::cout << "[PPI network data]: Path to Protein-Protein Interaction Networks;" << std::endl;
+//            std::cout << "[Thread Number]: Number of cores for multithreading, the default is 1;" << std::endl;
+//            std::cout << "-v, -version Show program version number" << std::endl;
+//            // 添加更多的帮助信息
+//            return 0;
+//        } else if (arg == "-v" || arg == "-version") {
+//            std::cout << "Version of DriverMP：1.0" << std::endl;
+//            return 0;
+//        } else {
+//            cout << "Wrong number of parameters, please try again." << endl;
+//            return 1;
+//        }
+//    }
+//    else {
+//        cout << "Wrong number of parameters, please try again." << endl;
+//        return 1;
+//    }
 
     // Preprocessing the original genes;
     Driver D;
