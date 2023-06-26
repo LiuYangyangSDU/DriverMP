@@ -45,8 +45,8 @@ string  usage(){
     use_info<<""<<endl;
     use_info<<"** Required **"<<"\n"<<endl
             <<"  --mut/-m <string>            "<<": Path to format-compliant non-silent somatic mutation data;"<<"\n"<<endl
-            <<"  --tumor_exp/-u <string>      "<<": Path to RNA-Seq data (FPKM normalized) for specific cancer samples;"<<"\n"<<endl
-            <<"  --normal_exp/-n <string>     "<<": Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;"<<"\n"<<endl
+            <<"  --tumor_exp/-u <string>      "<<": Path to gene expression data (FPKM normalized) for specific cancer samples;"<<"\n"<<endl
+            <<"  --normal_exp/-n <string>     "<<": Path to gene expression (FPKM normalized) of normal samples corresponding to the specific cancer;"<<"\n"<<endl
             <<"  --ppi/-p <string>            "<<": Path to Protein-Protein Interaction Networks."<<"\n"<<endl
             <<"** Optional **"<<"\n"<<endl
             <<"  --output/-o <string>         "<<": Output path, default: ./DriverMP_results/output.txt;"<<"\n"<<endl
@@ -55,7 +55,7 @@ string  usage(){
             <<"  --help/-h                    "<<": help infomation;"<<"\n"<<endl
             <<"** Typical commands **"<<"\n"<<endl
             <<"A example of DriverMP  might be:"<<"\n"<<endl
-            <<"  ./DriverMP DriverMP_example//Mutation_data.txt DriverMP_example//Gene_expresstion_tumor.txt DriverMP_example//Gene_expression_normal.txt DriverMP_example//HumanNet"<<"\n"<<endl;
+            <<"  ./DriverMP DriverMP_example/Mutation_data.txt DriverMP_example/Gene_expresstion_tumor.txt DriverMP_example/Gene_expression_normal.txt DriverMP_example/HumanNet"<<"\n"<<endl;
     use_info<<"================================================================"<<endl;
     return use_info.str();
 }
