@@ -81,7 +81,7 @@ The current version of DriverMP is 1.0, subsequnt version will be updated.
  
 ## Data Format Requirements
 
-**1.** Mutation Data
+**1. Mutation Data**
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
@@ -99,7 +99,7 @@ The format requirement is as follows:
 	    
     [ Gene  C] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
-**2.** Gene Expression Data
+**2. Gene Expression Data**
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
@@ -121,7 +121,7 @@ The format requirement is as follows:
 	    
     [ Gene  C] tab [  value ] tab [  value ] tab … tab [  value ]
 
-**C.** Protein-Protein Interaction Network
+**3. Protein-Protein Interaction Network**
 
 (i) At present, the node (or gene/protein) naming method of PPI network is generally in NCBI format. For your convenience, we have built-in conversion of genes' names, and you can directly provide the downloaded PPI network to DriverMP.
 
