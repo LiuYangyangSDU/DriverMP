@@ -30,10 +30,6 @@ The workflow of DriverMP is as follows.
 
 `$ make DriverMP`
 
-**4.** You can compile the code we provide as follows：
-
-`$ make DriverMP`
-
 The compiled DriverMP file is in the current folder.
 
 ## Usage of DriverMP
