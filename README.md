@@ -32,6 +32,10 @@ The workflow of DriverMP is as follows.
 
 The compiled DriverMP file is in the current folder.
 
+**4.** If DriverMP does not work, you can try to add execution rights to it.:
+
+`$ chmod +x DriverMP`
+
 ## Usage of DriverMP
 		
     DriverMP [options] -m <mutation_file> -t <tumor_expression_file> -n <normal_expression_file> -p <PPI_network_file>
