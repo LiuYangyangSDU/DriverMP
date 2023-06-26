@@ -8,35 +8,31 @@ The workflow of DriverMP is as follows.
 
 ## Requirements for installation
 
-**A.** `Linux/Unix` environment
+**1.** `Linux/Unix` environment
 
-**B.** `C++` is one of the program languages, which is available for most operating systems. If you are in UNIX/Linux, it is probably already installed;
+**2.** `C++` is one of the program languages, which is available for most operating systems. If you are in UNIX/Linux, it is probably already installed;
 
-**C.** We tested the code on `Ubuntu 18.04.6 LTS`, using `g++ version 7.5.0`, and we recommend that you use DriverMP on that version or above. If you want to check your current version of g++, you can use the following command in your terminal:
+**3.** We tested the code on `Ubuntu 18.04.6 LTS`, using `g++ version 7.5.0`, and we recommend that you use DriverMP on that version or above. If you want to check your current version of g++, you can use the following command in your terminal:
 
 `g++ --version`
 
-**D.** Unzip "DriverMP.zip" you have downloaded;
+## Installation
 
-<<<<<<< HEAD
+**1.** Unzip "DriverMP-master.zip" you have downloaded:
 
-**E.** You can use our compiled `DriverMP` directly as shown below, 
+`$ unzip DriverMP-master.zip -d DriverMP`
 
-=======
-**E.** You can compile the code we provide as follows (The prerequisite is that you have the openMP installed)：
->>>>>>> 20e88dc2c99917e4bfef2f44604e667368a90ad6
+**2.** Then enter the DriverMP folder：
 
-or you can compile it yourself using the code we provide as follows (The prerequisite is that you have the openMP installed)：
+`$ cd DriverMP`
 
-<<<<<<< HEAD
+**2.** You can compile the code we provide as follows (The prerequisite is that you have the openMP installed)：
 
 `g++ -Ofast -fopenmp *.cpp -o DriverMP`
-=======
+
 Then, you can be freely to use DriverMP. If you cannot execute it, you can try to change the permissions of the file:
->>>>>>> 20e88dc2c99917e4bfef2f44604e667368a90ad6
 
-
-Then, you can use DriverMP as normal.
+`g++ -Ofast -fopenmp *.cpp -o DriverMP`
 
 ## Usage of DriverMP
 		
