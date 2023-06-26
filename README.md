@@ -46,9 +46,9 @@ The compiled DriverMP file is in the current folder.
 
     --tumor_exp/-u <string>      : Path to gene expression data (FPKM normalized) for specific cancer samples;
 
-    --normal_exp/-n <string>     : Path to RNA-Seq data (FPKM normalized) of normal samples corresponding to the specific cancer;
+    --normal_exp/-n <string>     : Path to gene expression data (FPKM normalized) of normal samples corresponding to the specific cancer;
 
-    --ppi/-p <string>            : Path to Protein-Protein Interaction Networks.
+    --ppi/-p <string>            : Path to a Protein-Protein Interaction Network.
 
 
 **Optional**
