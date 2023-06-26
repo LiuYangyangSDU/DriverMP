@@ -135,4 +135,6 @@ The data format requirement is as follows:
 			
     [Gene NCBI A] tab [Gene NCBI ID B] tab [the weight between Gene A and Gene B]
 
+    ...
+	
     [Gene NCBI C] tab [Gene NCBI ID D] tab [the weight between Gene C and Gene D]
