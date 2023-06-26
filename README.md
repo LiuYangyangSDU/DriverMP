@@ -32,7 +32,7 @@ The workflow of DriverMP is as follows.
 
 The compiled DriverMP file is in the current folder.
 
-**4.** If DriverMP does not work, you can try to add execution rights to it.:
+**4.** If DriverMP does not work, you can try to add execution rights to it:
 
 `$ chmod +x DriverMP`
 
