@@ -99,7 +99,7 @@ The format requirement is as follows:
 	    
     [ Gene  C] tab [ 0 or 1 ] tab [ 0 or 1 ] tab … tab [ 0 or 1 ]
 
-**2.** Gene Expression RNA-Seq Data
+**2.** Gene Expression Data
 
 (i) Note that only genes with `Official Symbol` can be recognised, such as BRCA1, IGF1R;
 
