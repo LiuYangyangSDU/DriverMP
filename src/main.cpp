@@ -158,7 +158,7 @@ int main(int argc, char* argv[]) {
         if (mkdir(output, 0777) != 0) std::cerr << "Failed to create folder." << std::endl;
     }
     string geneIDPath = "DriverMP_example//geneID.txt";
-    string referencePath = "DriverMP_example//CGC.txt";
+    string referencePath = "DriverMP_example//Combination.txt";
     string mutationPath;
     string expTumorPath;
     string expNormalPath;
