@@ -2,12 +2,12 @@
 
 ## ⚠️ Notice: AUC Calculation Method in DriverMP
 
-Please note that **AUC values in our paper are calculated using the _top N genes_**,  
+Please note that **AUC values/ROC curve in our paper are calculated using the _top N genes_**,  
 where **N is the _smallest number of genes_** among all compared methods (see *Methods* section in the paper).
 
-If your “reproduced results” look wildly different,  
-👉 you might want to double-check whether you **actually read the Methods section**.  
-Yes, it’s there for a reason. 😉
+If your reproduced results differ significantly, we kindly suggest reviewing the *Evaluation Criteria* section in our paper. We’ve noticed that some confusion may arise when this step is omitted during benchmarking.
+
+In computational research, carefully reading and fully understanding the methods before evaluating results is both respectful and professionally expected in our community (Yes, although some may prefer to make harsh criticisms without reading the full paper, most of us still value this fundamental principle/consensus).
 
 ## Brief introduction of DriverMP
 
