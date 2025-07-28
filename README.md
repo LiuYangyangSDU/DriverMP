@@ -1,5 +1,16 @@
 # DriverMP
 
+## ⚠️ Notice: AUC Calculation Method in DriverMP
+
+Please note that **AUC values in our paper are calculated using the _top N genes_**,  
+where **N is the _smallest number of genes_** among all compared methods (see *Methods* section in the paper).
+
+If your “reproduced results” look wildly different,  
+👉 you might want to double-check whether you **actually read the Methods section**.  
+Yes, it’s there for a reason. 😉
+
+## Brief introduction of DriverMP
+
 Here, we present a new method termed DriverMP (Multiomics-based Pair driver genes) for effectively prioritizing altered genes on a cancer type level by considering mutation pair genes. It is designed by first applying somatic mutation data, protein-protein interaction network, and differential gene expression data to prioritizing mutation pairs, based on which individual mutated genes are then prioritized.
 
 The workflow of DriverMP is as follows.
